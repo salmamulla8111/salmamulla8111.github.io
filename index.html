@@ -1,0 +1,2457 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Salma Mulla | Cloud Engineer specializing in Cloud Operations, Infrastructure Monitoring, Observability, Automation and Information Security.">
+
+    <meta name="author"
+          content="Salma Mulla">
+
+    <meta name="keywords"
+          content="Salma Mulla, Cloud Engineer, Cloud Operations, DevOps, ELK Stack, Zabbix, Nutanix, Linux, Python, Automation, Infrastructure Monitoring">
+
+    <meta name="robots"
+          content="index, follow">
+
+
+    <!-- Open Graph for LinkedIn -->
+
+    <meta property="og:title"
+          content="Salma Mulla | Cloud Engineer">
+
+    <meta property="og:description"
+          content="Cloud Engineer specializing in Cloud Operations, Infrastructure Monitoring, Observability, Automation and Information Security.">
+
+    <meta property="og:type"
+          content="website">
+
+
+    <title>Salma Mulla | Cloud Engineer</title>
+
+
+    <!-- Google Font -->
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+
+    <!-- Font Awesome -->
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+
+    <style>
+
+        /* =========================================
+           RESET
+        ========================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        body {
+            font-family: "Inter", sans-serif;
+            background: #050505;
+            color: #ffffff;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+
+        :root {
+            --pink: #FF014F;
+            --pink-dark: #d90042;
+            --black: #050505;
+            --dark: #0b0b0b;
+            --card: #101010;
+            --border: rgba(255,255,255,0.08);
+            --text: #ffffff;
+            --muted: #a5a5a5;
+            --container: 1180px;
+        }
+
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+
+        button,
+        input,
+        textarea {
+            font-family: inherit;
+        }
+
+
+        /* =========================================
+           SCROLLBAR
+        ========================================== */
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+
+        ::-webkit-scrollbar-track {
+            background: #050505;
+        }
+
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--pink);
+            border-radius: 10px;
+        }
+
+
+        /* =========================================
+           CONTAINER
+        ========================================== */
+
+        .container {
+            width: min(92%, var(--container));
+            margin: auto;
+        }
+
+
+        /* =========================================
+           NAVBAR
+        ========================================== */
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+
+            z-index: 1000;
+
+            background: rgba(5,5,5,0.88);
+
+            backdrop-filter: blur(15px);
+
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+
+        .navbar {
+            height: 78px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+        }
+
+
+        .logo {
+            font-size: 22px;
+            font-weight: 800;
+        }
+
+
+        .logo span {
+            color: var(--pink);
+        }
+
+
+        .nav-links {
+            display: flex;
+
+            align-items: center;
+
+            gap: 28px;
+
+            list-style: none;
+        }
+
+
+        .nav-links a {
+            color: #cfcfcf;
+
+            font-size: 14px;
+
+            font-weight: 500;
+
+            transition: 0.3s;
+        }
+
+
+        .nav-links a:hover {
+            color: var(--pink);
+        }
+
+
+        .nav-contact {
+            padding: 10px 17px;
+
+            border: 1px solid var(--pink);
+
+            border-radius: 6px;
+
+            color: white !important;
+        }
+
+
+        .nav-contact:hover {
+            background: var(--pink);
+        }
+
+
+        .menu-toggle {
+            display: none;
+
+            font-size: 24px;
+
+            cursor: pointer;
+        }
+
+
+        /* =========================================
+           HERO
+        ========================================== */
+
+        .hero {
+            min-height: 100vh;
+
+            display: flex;
+
+            align-items: center;
+
+            padding-top: 100px;
+
+            position: relative;
+
+            overflow: hidden;
+        }
+
+
+        .hero::before {
+            content: "";
+
+            position: absolute;
+
+            width: 550px;
+            height: 550px;
+
+            right: -180px;
+            top: 10%;
+
+            background: rgba(255,1,79,0.08);
+
+            filter: blur(120px);
+
+            border-radius: 50%;
+        }
+
+
+        .hero-content {
+            position: relative;
+
+            z-index: 2;
+        }
+
+
+        .hero-label {
+            color: var(--pink);
+
+            font-size: 13px;
+
+            font-weight: 800;
+
+            letter-spacing: 3px;
+
+            text-transform: uppercase;
+
+            margin-bottom: 20px;
+        }
+
+
+        .hero h1 {
+            font-size: clamp(48px, 8vw, 88px);
+
+            line-height: 1.03;
+
+            letter-spacing: -4px;
+
+            max-width: 950px;
+        }
+
+
+        .hero h1 span {
+            color: var(--pink);
+        }
+
+
+        .hero-role {
+            margin-top: 25px;
+
+            font-size: clamp(18px, 3vw, 25px);
+
+            color: #d0d0d0;
+
+            font-weight: 500;
+        }
+
+
+        .hero-description {
+            max-width: 780px;
+
+            margin-top: 25px;
+
+            color: var(--muted);
+
+            line-height: 1.9;
+
+            font-size: 16px;
+        }
+
+
+        .hero-buttons {
+            display: flex;
+
+            gap: 15px;
+
+            flex-wrap: wrap;
+
+            margin-top: 35px;
+        }
+
+
+        .btn {
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 10px;
+
+            padding: 14px 24px;
+
+            border-radius: 7px;
+
+            font-size: 14px;
+
+            font-weight: 700;
+
+            transition: 0.3s;
+        }
+
+
+        .btn-primary {
+            background: var(--pink);
+
+            border: 1px solid var(--pink);
+
+            color: white;
+        }
+
+
+        .btn-primary:hover {
+            background: var(--pink-dark);
+
+            transform: translateY(-3px);
+
+            box-shadow:
+                0 12px 35px rgba(255,1,79,0.25);
+        }
+
+
+        .btn-outline {
+            border: 1px solid rgba(255,255,255,0.18);
+
+            color: white;
+        }
+
+
+        .btn-outline:hover {
+            border-color: var(--pink);
+
+            color: var(--pink);
+
+            transform: translateY(-3px);
+        }
+
+
+        /* =========================================
+           TECH STRIP
+        ========================================== */
+
+        .tech-strip {
+            margin-top: 60px;
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 10px;
+        }
+
+
+        .tech {
+            padding: 8px 14px;
+
+            border-radius: 50px;
+
+            border: 1px solid var(--border);
+
+            background: rgba(255,255,255,0.025);
+
+            color: #aaa;
+
+            font-size: 12px;
+        }
+
+
+        /* =========================================
+           SECTIONS
+        ========================================== */
+
+        section {
+            padding: 110px 0;
+        }
+
+
+        .section-label {
+            color: var(--pink);
+
+            font-size: 12px;
+
+            font-weight: 800;
+
+            letter-spacing: 3px;
+
+            text-transform: uppercase;
+
+            margin-bottom: 12px;
+        }
+
+
+        .section-title {
+            font-size: clamp(32px,5vw,48px);
+
+            line-height: 1.15;
+
+            letter-spacing: -1.5px;
+
+            margin-bottom: 20px;
+        }
+
+
+        .section-title span {
+            color: var(--pink);
+        }
+
+
+        .section-description {
+            max-width: 760px;
+
+            color: var(--muted);
+
+            line-height: 1.9;
+        }
+
+
+        /* =========================================
+           ABOUT
+        ========================================== */
+
+        .about-grid {
+            display: grid;
+
+            grid-template-columns: 1.5fr 1fr;
+
+            gap: 70px;
+
+            align-items: center;
+        }
+
+
+        .about-text p {
+            color: #b8b8b8;
+
+            line-height: 1.95;
+
+            margin-bottom: 18px;
+        }
+
+
+        .stats {
+            display: grid;
+
+            grid-template-columns: repeat(2,1fr);
+
+            gap: 15px;
+        }
+
+
+        .stat {
+            padding: 25px;
+
+            background: var(--card);
+
+            border: 1px solid var(--border);
+
+            border-radius: 12px;
+
+            transition: 0.3s;
+        }
+
+
+        .stat:hover {
+            transform: translateY(-5px);
+
+            border-color: rgba(255,1,79,0.4);
+        }
+
+
+        .stat-number {
+            color: var(--pink);
+
+            font-size: 30px;
+
+            font-weight: 800;
+        }
+
+
+        .stat-label {
+            color: #999;
+
+            font-size: 13px;
+        }
+
+
+        /* =========================================
+           SKILLS
+        ========================================== */
+
+        .skills-grid {
+            margin-top: 50px;
+
+            display: grid;
+
+            grid-template-columns: repeat(2,1fr);
+
+            gap: 18px;
+        }
+
+
+        .skill-card {
+            padding: 28px;
+
+            background: var(--card);
+
+            border: 1px solid var(--border);
+
+            border-radius: 12px;
+
+            transition: 0.3s;
+        }
+
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+
+            border-color: rgba(255,1,79,0.4);
+        }
+
+
+        .skill-icon {
+            width: 45px;
+            height: 45px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            background: rgba(255,1,79,0.1);
+
+            color: var(--pink);
+
+            border-radius: 10px;
+
+            margin-bottom: 18px;
+        }
+
+
+        .skill-card h3 {
+            font-size: 18px;
+
+            margin-bottom: 12px;
+        }
+
+
+        .skill-card p {
+            color: #999;
+
+            font-size: 14px;
+
+            line-height: 1.8;
+        }
+
+
+        /* =========================================
+           EXPERIENCE
+        ========================================== */
+
+        .timeline {
+            margin-top: 55px;
+
+            position: relative;
+        }
+
+
+        .timeline::before {
+            content: "";
+
+            position: absolute;
+
+            left: 8px;
+
+            top: 0;
+
+            bottom: 0;
+
+            width: 1px;
+
+            background: rgba(255,1,79,0.35);
+        }
+
+
+        .timeline-item {
+            position: relative;
+
+            padding-left: 50px;
+
+            margin-bottom: 50px;
+        }
+
+
+        .timeline-dot {
+            position: absolute;
+
+            left: 0;
+
+            top: 5px;
+
+            width: 17px;
+
+            height: 17px;
+
+            border-radius: 50%;
+
+            background: var(--pink);
+
+            box-shadow:
+                0 0 0 6px rgba(255,1,79,0.1);
+        }
+
+
+        .timeline-date {
+            color: var(--pink);
+
+            font-size: 12px;
+
+            font-weight: 700;
+
+            letter-spacing: 1px;
+
+            margin-bottom: 8px;
+        }
+
+
+        .timeline-item h3 {
+            font-size: 23px;
+
+            margin-bottom: 5px;
+        }
+
+
+        .company {
+            color: #999;
+
+            font-size: 14px;
+
+            margin-bottom: 17px;
+        }
+
+
+        .timeline-item p {
+            color: #aaa;
+
+            max-width: 850px;
+
+            line-height: 1.9;
+        }
+
+
+        /* =========================================
+           EDUCATION
+        ========================================== */
+
+        .education-grid {
+            margin-top: 50px;
+
+            display: grid;
+
+            grid-template-columns: repeat(2,1fr);
+
+            gap: 20px;
+        }
+
+
+        .education-card {
+            padding: 30px;
+
+            background: var(--card);
+
+            border: 1px solid var(--border);
+
+            border-radius: 12px;
+        }
+
+
+        .education-icon {
+            color: var(--pink);
+
+            font-size: 25px;
+
+            margin-bottom: 18px;
+        }
+
+
+        .education-card h3 {
+            font-size: 20px;
+
+            margin-bottom: 7px;
+        }
+
+
+        .institution {
+            color: var(--pink);
+
+            font-size: 13px;
+
+            margin-bottom: 15px;
+        }
+
+
+        .education-card p {
+            color: #999;
+
+            font-size: 14px;
+
+            line-height: 1.8;
+        }
+
+
+        /* =========================================
+           PUBLICATION
+        ========================================== */
+
+        .publication-card {
+            margin-top: 45px;
+
+            max-width: 950px;
+
+            padding: 35px;
+
+            background: var(--card);
+
+            border: 1px solid var(--border);
+
+            border-radius: 15px;
+        }
+
+
+        .publication-card h3 {
+            font-size: 22px;
+
+            line-height: 1.5;
+
+            margin-bottom: 15px;
+        }
+
+
+        .publication-card p {
+            color: #999;
+
+            line-height: 1.8;
+
+            margin-bottom: 12px;
+        }
+
+
+        .publication-meta {
+            color: var(--pink) !important;
+
+            font-size: 13px;
+
+            font-weight: 600;
+        }
+
+
+        /* =========================================
+           CERTIFICATIONS
+        ========================================== */
+
+        .cert-grid {
+            margin-top: 50px;
+
+            display: grid;
+
+            grid-template-columns: repeat(2,1fr);
+
+            gap: 18px;
+        }
+
+
+        .cert-card {
+            padding: 25px;
+
+            display: flex;
+
+            gap: 18px;
+
+            background: var(--card);
+
+            border: 1px solid var(--border);
+
+            border-radius: 12px;
+        }
+
+
+        .cert-icon {
+            color: var(--pink);
+
+            font-size: 22px;
+        }
+
+
+        .cert-card h3 {
+            font-size: 15px;
+
+            margin-bottom: 5px;
+        }
+
+
+        .cert-card p {
+            color: #777;
+
+            font-size: 13px;
+        }
+
+
+        /* =========================================
+           CONTACT
+        ========================================== */
+
+        .contact-grid {
+            display: grid;
+
+            grid-template-columns: 0.85fr 1.15fr;
+
+            gap: 60px;
+
+            margin-top: 50px;
+        }
+
+
+        .contact-info h3 {
+            font-size: 28px;
+
+            margin-bottom: 15px;
+        }
+
+
+        .contact-info > p {
+            color: #999;
+
+            line-height: 1.9;
+
+            margin-bottom: 30px;
+        }
+
+
+        .contact-item {
+            display: flex;
+
+            align-items: center;
+
+            gap: 15px;
+
+            margin-bottom: 20px;
+        }
+
+
+        .contact-icon {
+            width: 45px;
+
+            height: 45px;
+
+            flex-shrink: 0;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            background: rgba(255,1,79,0.1);
+
+            color: var(--pink);
+
+            border-radius: 9px;
+        }
+
+
+        .contact-item small {
+            display: block;
+
+            color: #666;
+
+            font-size: 10px;
+
+            margin-bottom: 2px;
+        }
+
+
+        .contact-item a,
+        .contact-item span {
+            color: #ddd;
+
+            font-size: 14px;
+
+            word-break: break-word;
+        }
+
+
+        .social-links {
+            display: flex;
+
+            gap: 12px;
+
+            margin-top: 30px;
+        }
+
+
+        .social-links a {
+            width: 42px;
+
+            height: 42px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border: 1px solid var(--border);
+
+            border-radius: 8px;
+
+            color: #999;
+
+            transition: 0.3s;
+        }
+
+
+        .social-links a:hover {
+            color: var(--pink);
+
+            border-color: var(--pink);
+
+            transform: translateY(-3px);
+        }
+
+
+        /* =========================================
+           CONTACT FORM
+        ========================================== */
+
+        .contact-form {
+            padding: 35px;
+
+            background: var(--card);
+
+            border: 1px solid var(--border);
+
+            border-radius: 15px;
+        }
+
+
+        .form-row {
+            display: grid;
+
+            grid-template-columns: repeat(2,1fr);
+
+            gap: 18px;
+        }
+
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+
+        .form-group label {
+            display: block;
+
+            color: #ddd;
+
+            font-size: 13px;
+
+            font-weight: 600;
+
+            margin-bottom: 8px;
+        }
+
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+
+            background: #080808;
+
+            color: white;
+
+            border: 1px solid rgba(255,255,255,0.09);
+
+            border-radius: 7px;
+
+            padding: 14px;
+
+            outline: none;
+
+            transition: 0.3s;
+        }
+
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: var(--pink);
+
+            box-shadow:
+                0 0 0 3px rgba(255,1,79,0.08);
+        }
+
+
+        .form-group textarea {
+            resize: vertical;
+
+            min-height: 150px;
+        }
+
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: #555;
+        }
+
+
+        .submit-button {
+            width: 100%;
+        }
+
+
+        /* =========================================
+           FOOTER
+        ========================================== */
+
+        footer {
+            padding: 35px 0;
+
+            border-top: 1px solid rgba(255,255,255,0.06);
+
+            text-align: center;
+        }
+
+
+        footer p {
+            color: #666;
+
+            font-size: 13px;
+        }
+
+
+        footer span {
+            color: var(--pink);
+        }
+
+
+        /* =========================================
+           ANIMATION
+        ========================================== */
+
+        .reveal {
+            opacity: 0;
+
+            transform: translateY(25px);
+
+            transition: 0.8s ease;
+        }
+
+
+        .reveal.active {
+            opacity: 1;
+
+            transform: translateY(0);
+        }
+
+
+        /* =========================================
+           RESPONSIVE
+        ========================================== */
+
+        @media(max-width:900px) {
+
+            .about-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .skills-grid,
+            .education-grid,
+            .cert-grid {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+
+        @media(max-width:768px) {
+
+            section {
+                padding: 80px 0;
+            }
+
+
+            .menu-toggle {
+                display: block;
+            }
+
+
+            .nav-links {
+                position: absolute;
+
+                top: 78px;
+
+                left: 0;
+
+                width: 100%;
+
+                display: none;
+
+                flex-direction: column;
+
+                align-items: flex-start;
+
+                gap: 0;
+
+                padding: 25px;
+
+                background: #080808;
+
+                border-bottom: 1px solid var(--border);
+            }
+
+
+            .nav-links.active {
+                display: flex;
+            }
+
+
+            .nav-links li {
+                width: 100%;
+            }
+
+
+            .nav-links a {
+                display: block;
+
+                padding: 9px 0;
+            }
+
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+
+        @media(max-width:500px) {
+
+            .stats {
+                grid-template-columns: 1fr;
+            }
+
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+
+            .hero-buttons .btn {
+                width: 100%;
+            }
+
+
+            .contact-form {
+                padding: 22px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================
+     NAVIGATION
+========================================== -->
+
+<header>
+
+    <div class="container navbar">
+
+        <a href="#home" class="logo">
+            SALMA<span>.</span>
+        </a>
+
+
+        <div class="menu-toggle" id="menuToggle">
+            <i class="fas fa-bars"></i>
+        </div>
+
+
+        <ul class="nav-links" id="navLinks">
+
+            <li>
+                <a href="#home">Home</a>
+            </li>
+
+            <li>
+                <a href="#about">About</a>
+            </li>
+
+            <li>
+                <a href="#skills">Skills</a>
+            </li>
+
+            <li>
+                <a href="#experience">Experience</a>
+            </li>
+
+            <li>
+                <a href="#education">Education</a>
+            </li>
+
+            <li>
+                <a href="#publication">Publication</a>
+            </li>
+
+            <li>
+                <a href="#contact" class="nav-contact">
+                    Contact
+                </a>
+            </li>
+
+        </ul>
+
+    </div>
+
+</header>
+
+
+
+<!-- =========================================
+     HERO
+========================================== -->
+
+<section class="hero" id="home">
+
+    <div class="container">
+
+        <div class="hero-content reveal">
+
+            <div class="hero-label">
+                Cloud Engineer
+            </div>
+
+
+            <h1>
+                Hi, I'm
+                <span>Salma Mulla.</span>
+            </h1>
+
+
+            <div class="hero-role">
+                Cloud Operations · Infrastructure Monitoring · Observability
+            </div>
+
+
+            <p class="hero-description">
+
+                Cloud Engineer with hands-on experience in cloud operations,
+                infrastructure monitoring, observability, information-security
+                practices, troubleshooting and automation.
+
+                I work with ELK Stack, Zabbix, Nutanix, Linux,
+                Windows/Wintel, databases, Python and Shell Scripting
+                to support reliable and observable infrastructure operations.
+
+            </p>
+
+
+            <div class="hero-buttons">
+
+                <a href="#experience"
+                   class="btn btn-primary">
+
+                    View My Experience
+
+                    <i class="fas fa-arrow-down"></i>
+
+                </a>
+
+
+                <a href="resume.pdf"
+                   class="btn btn-outline"
+                   target="_blank"
+                   rel="noopener">
+
+                    Download Resume
+
+                    <i class="fas fa-file-arrow-down"></i>
+
+                </a>
+
+            </div>
+
+
+            <div class="tech-strip">
+
+                <span class="tech">ELK Stack</span>
+
+                <span class="tech">Zabbix</span>
+
+                <span class="tech">Nutanix</span>
+
+                <span class="tech">Linux</span>
+
+                <span class="tech">Windows</span>
+
+                <span class="tech">Oracle</span>
+
+                <span class="tech">Python</span>
+
+                <span class="tech">Shell</span>
+
+                <span class="tech">Ansible</span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     ABOUT
+========================================== -->
+
+<section id="about">
+
+    <div class="container">
+
+        <div class="about-grid">
+
+            <div class="about-text reveal">
+
+                <div class="section-label">
+                    About Me
+                </div>
+
+
+                <h2 class="section-title">
+                    Building
+                    <span>Reliable Infrastructure.</span>
+                </h2>
+
+
+                <p>
+                    I'm Salma Mulla, a Cloud Engineer with approximately
+                    1.9 years of experience in cloud operations,
+                    infrastructure monitoring, observability and
+                    information-security practices at Airtel Digital.
+                </p>
+
+
+                <p>
+                    My work focuses on maintaining visibility and reliability
+                    across cloud infrastructure through monitoring,
+                    log management, alerting, troubleshooting and automation.
+                </p>
+
+
+                <p>
+                    I work with ELK Stack, Zabbix, Metricbeat, Heartbeat
+                    and Nutanix, along with database monitoring across
+                    Oracle, MySQL, MSSQL and PostgreSQL environments.
+                </p>
+
+
+                <p>
+                    I also work with Linux and Windows/Wintel systems
+                    and use Python, Shell Scripting and Ansible for
+                    operational automation.
+                </p>
+
+            </div>
+
+
+            <div class="stats reveal">
+
+                <div class="stat">
+
+                    <div class="stat-number">
+                        1.9+
+                    </div>
+
+                    <div class="stat-label">
+                        Years Experience
+                    </div>
+
+                </div>
+
+
+                <div class="stat">
+
+                    <div class="stat-number">
+                        2
+                    </div>
+
+                    <div class="stat-label">
+                        Airtel Roles
+                    </div>
+
+                </div>
+
+
+                <div class="stat">
+
+                    <div class="stat-number">
+                        9.25
+                    </div>
+
+                    <div class="stat-label">
+                        BE CGPA
+                    </div>
+
+                </div>
+
+
+                <div class="stat">
+
+                    <div class="stat-number">
+                        MCA
+                    </div>
+
+                    <div class="stat-label">
+                        Currently Pursuing
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     SKILLS
+========================================== -->
+
+<section id="skills">
+
+    <div class="container">
+
+        <div class="reveal">
+
+            <div class="section-label">
+                Technical Skills
+            </div>
+
+
+            <h2 class="section-title">
+                My <span>Proficiencies</span>
+            </h2>
+
+
+            <p class="section-description">
+                Technologies and operational areas I work with across
+                cloud infrastructure, monitoring, automation and support.
+            </p>
+
+        </div>
+
+
+        <div class="skills-grid">
+
+
+            <div class="skill-card reveal">
+
+                <div class="skill-icon">
+                    <i class="fas fa-cloud"></i>
+                </div>
+
+                <h3>
+                    Cloud & Infrastructure
+                </h3>
+
+                <p>
+                    Cloud Operations · Nutanix · Linux · Windows / Wintel
+                </p>
+
+            </div>
+
+
+            <div class="skill-card reveal">
+
+                <div class="skill-icon">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+
+                <h3>
+                    Monitoring & Observability
+                </h3>
+
+                <p>
+                    Elasticsearch · Logstash · Kibana · Zabbix ·
+                    Metricbeat · Heartbeat
+                </p>
+
+            </div>
+
+
+            <div class="skill-card reveal">
+
+                <div class="skill-icon">
+                    <i class="fas fa-database"></i>
+                </div>
+
+                <h3>
+                    Databases
+                </h3>
+
+                <p>
+                    Oracle · MySQL · MSSQL · PostgreSQL
+                </p>
+
+            </div>
+
+
+            <div class="skill-card reveal">
+
+                <div class="skill-icon">
+                    <i class="fas fa-code"></i>
+                </div>
+
+                <h3>
+                    Automation & Scripting
+                </h3>
+
+                <p>
+                    Python · Shell Scripting · Ansible
+                </p>
+
+            </div>
+
+
+            <div class="skill-card reveal">
+
+                <div class="skill-icon">
+                    <i class="fas fa-shield-halved"></i>
+                </div>
+
+                <h3>
+                    Information Security
+                </h3>
+
+                <p>
+                    Incident Analysis · Alerting & Thresholds ·
+                    Service Validation · Documentation
+                </p>
+
+            </div>
+
+
+            <div class="skill-card reveal">
+
+                <div class="skill-icon">
+                    <i class="fas fa-screwdriver-wrench"></i>
+                </div>
+
+                <h3>
+                    Operations & Support
+                </h3>
+
+                <p>
+                    Troubleshooting · Customer Collaboration ·
+                    Production Monitoring · Operational Support
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     EXPERIENCE
+========================================== -->
+
+<section id="experience">
+
+    <div class="container">
+
+        <div class="reveal">
+
+            <div class="section-label">
+                Career
+            </div>
+
+
+            <h2 class="section-title">
+                Work <span>Experience</span>
+            </h2>
+
+
+            <p class="section-description">
+                My professional experience across cloud operations,
+                infrastructure monitoring and information-security
+                practices at Airtel Digital.
+            </p>
+
+        </div>
+
+
+        <div class="timeline">
+
+
+            <div class="timeline-item reveal">
+
+                <div class="timeline-dot"></div>
+
+
+                <div class="timeline-date">
+                    JUL 2025 — PRESENT
+                </div>
+
+
+                <h3>
+                    Cloud Engineer
+                </h3>
+
+
+                <div class="company">
+                    Airtel Digital · Pune, Maharashtra
+                </div>
+
+
+                <p>
+
+                    Manage cloud infrastructure monitoring and observability
+                    using ELK Stack and Zabbix, with hands-on experience in
+                    Kibana dashboards, Logstash pipelines, Metricbeat,
+                    Heartbeat and Nutanix monitoring.
+
+                    Monitor Oracle, MySQL, MSSQL and PostgreSQL environments,
+                    support Linux and Windows servers, configure proactive
+                    alerts and automate operational tasks using Python
+                    and Shell Scripting.
+
+                </p>
+
+            </div>
+
+
+
+            <div class="timeline-item reveal">
+
+                <div class="timeline-dot"></div>
+
+
+                <div class="timeline-date">
+                    JAN 2025 — JUL 2025
+                </div>
+
+
+                <h3>
+                    Cloud Operations & Information Security Intern
+                </h3>
+
+
+                <div class="company">
+                    Airtel Digital · Pune, Maharashtra
+                </div>
+
+
+                <p>
+
+                    Gained hands-on experience in cloud infrastructure
+                    monitoring, information-security practices and
+                    observability using ELK Stack.
+
+                    Worked with Kibana dashboards, log analysis,
+                    data-ingestion validation and incident monitoring
+                    while supporting senior engineers and maintaining
+                    operational documentation.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     EDUCATION
+========================================== -->
+
+<section id="education">
+
+    <div class="container">
+
+        <div class="reveal">
+
+            <div class="section-label">
+                Education
+            </div>
+
+
+            <h2 class="section-title">
+                Academic <span>Background</span>
+            </h2>
+
+        </div>
+
+
+        <div class="education-grid">
+
+
+            <div class="education-card reveal">
+
+                <div class="education-icon">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+
+
+                <h3>
+                    Master of Computer Applications
+                </h3>
+
+
+                <div class="institution">
+                    Dr. D. Y. Patil University
+                </div>
+
+
+                <p>
+                    Centre of Online Learning, Pune
+                    <br>
+                    2026 — Present
+                </p>
+
+
+                <p style="margin-top:15px;">
+
+                    Currently pursuing my MCA while expanding
+                    my knowledge in cloud technologies,
+                    automation and infrastructure.
+
+                </p>
+
+            </div>
+
+
+
+            <div class="education-card reveal">
+
+                <div class="education-icon">
+                    <i class="fas fa-laptop-code"></i>
+                </div>
+
+
+                <h3>
+                    Bachelor of Engineering
+                </h3>
+
+
+                <div class="institution">
+                    Computer Engineering · AISSMS IOIT
+                </div>
+
+
+                <p>
+                    Pune
+                    <br>
+                    2022 — 2025
+                    <br>
+                    CGPA: 9.25
+                </p>
+
+
+                <p style="margin-top:15px;">
+
+                    Built a strong foundation in computer science,
+                    software development, databases and technology.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     PUBLICATION
+========================================== -->
+
+<section id="publication">
+
+    <div class="container">
+
+        <div class="reveal">
+
+            <div class="section-label">
+                Research
+            </div>
+
+
+            <h2 class="section-title">
+                Published <span>Research</span>
+            </h2>
+
+        </div>
+
+
+        <div class="publication-card reveal">
+
+            <h3>
+
+                OncoFusion: Multi-Model Approach for Generalized
+                and Ovarian Cancer Detection with Stacked Ensembles
+
+            </h3>
+
+
+            <p>
+
+                Research work focused on histopathological cancer
+                detection using transfer learning and stacked
+                ensemble approaches.
+
+            </p>
+
+
+            <p>
+
+                Methods included transfer learning, data augmentation,
+                SHAP and Permutation Importance.
+
+            </p>
+
+
+            <p class="publication-meta">
+
+                EPJ Web of Conferences · Volume 328 · 2025 · ICETSF-2025
+
+            </p>
+
+
+            <a
+                href="https://doi.org/10.1051/epjconf/202532801045"
+                target="_blank"
+                rel="noopener"
+                class="btn btn-outline"
+                style="margin-top:15px;"
+            >
+
+                View Publication
+
+                <i class="fas fa-external-link-alt"></i>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     CERTIFICATIONS
+========================================== -->
+
+<section id="certifications">
+
+    <div class="container">
+
+        <div class="reveal">
+
+            <div class="section-label">
+                Learning
+            </div>
+
+
+            <h2 class="section-title">
+                Certifications & <span>Courses</span>
+            </h2>
+
+        </div>
+
+
+        <div class="cert-grid">
+
+
+            <div class="cert-card reveal">
+
+                <div class="cert-icon">
+                    <i class="fas fa-certificate"></i>
+                </div>
+
+
+                <div>
+
+                    <h3>
+                        Elasticsearch 8, Kibana,
+                        Logstash & Beats
+                    </h3>
+
+                    <p>
+                        Udemy
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="cert-card reveal">
+
+                <div class="cert-icon">
+                    <i class="fas fa-robot"></i>
+                </div>
+
+
+                <div>
+
+                    <h3>
+                        Generative AI and Its Impact
+                        to Everyday Business
+                    </h3>
+
+                    <p>
+                        Airtel
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     CONTACT
+========================================== -->
+
+<section id="contact">
+
+    <div class="container">
+
+        <div class="reveal">
+
+            <div class="section-label">
+                Contact
+            </div>
+
+
+            <h2 class="section-title">
+                Let's <span>Connect.</span>
+            </h2>
+
+
+            <p class="section-description">
+
+                Have an opportunity, technical discussion
+                or simply want to connect?
+
+                Send me a message and I'll get back to you.
+
+            </p>
+
+        </div>
+
+
+        <div class="contact-grid">
+
+
+            <!-- CONTACT DETAILS -->
+
+            <div class="contact-info reveal">
+
+                <h3>
+                    Get in touch
+                </h3>
+
+
+                <p>
+
+                    I'm open to conversations around Cloud Engineering,
+                    Cloud Operations, Infrastructure Monitoring,
+                    Observability, Automation and related opportunities.
+
+                </p>
+
+
+                <div class="contact-item">
+
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+
+
+                    <div>
+
+                        <small>
+                            EMAIL
+                        </small>
+
+
+                        <a href="mailto:a.salma.mulla31@gmail.com">
+
+                            a.salma.mulla31@gmail.com
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="contact-item">
+
+                    <div class="contact-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+
+
+                    <div>
+
+                        <small>
+                            PHONE
+                        </small>
+
+
+                        <a href="tel:+919370978580">
+
+                            +91 93709 78580
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="contact-item">
+
+                    <div class="contact-icon">
+                        <i class="fas fa-location-dot"></i>
+                    </div>
+
+
+                    <div>
+
+                        <small>
+                            LOCATION
+                        </small>
+
+
+                        <span>
+                            Pune, Maharashtra, India
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="social-links">
+
+                    <!-- CHANGE LINK -->
+
+                    <a
+                        href="https://www.linkedin.com/in/salma-mulla-0118a5231/"
+                        target="_blank"
+                        rel="noopener"
+                        aria-label="LinkedIn"
+                    >
+
+                        <i class="fab fa-linkedin-in"></i>
+
+                    </a>
+
+
+                    <!-- CHANGE LINK -->
+
+                    <a
+                        href="https://github.com/salmamulla8111"
+                        target="_blank"
+                        rel="noopener"
+                        aria-label="GitHub"
+                    >
+
+                        <i class="fab fa-github"></i>
+
+                    </a>
+
+
+                    <a
+                        href="mailto:a.salma.mulla31@gmail.com"
+                        aria-label="Email"
+                    >
+
+                        <i class="fas fa-envelope"></i>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =====================================
+                 REAL CONTACT FORM
+            ====================================== -->
+
+            <form
+                action="https://formsubmit.co/a.salma.mulla31@gmail.com"
+                method="POST"
+                class="contact-form reveal"
+            >
+
+
+                <!-- Email subject -->
+
+                <input
+                    type="hidden"
+                    name="_subject"
+                    value="New Portfolio Contact - Salma Mulla"
+                >
+
+
+                <!-- Redirect after successful submission -->
+
+                <input
+                    type="hidden"
+                    name="_next"
+                    value="https://YOUR-GITHUB-USERNAME.github.io/thank-you.html"
+                >
+
+
+                <!-- Identify the page -->
+
+                <input
+                    type="hidden"
+                    name="_url"
+                    value="https://YOUR-GITHUB-USERNAME.github.io/"
+                >
+
+
+                <!-- Spam honeypot -->
+
+                <input
+                    type="text"
+                    name="_honey"
+                    style="display:none"
+                    tabindex="-1"
+                    autocomplete="off"
+                >
+
+
+                <!-- NAME + EMAIL -->
+
+                <div class="form-row">
+
+
+                    <div class="form-group">
+
+                        <label for="name">
+                            Your Name *
+                        </label>
+
+
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            placeholder="Enter your name"
+                            required
+                        >
+
+                    </div>
+
+
+
+                    <div class="form-group">
+
+                        <label for="email">
+                            Email Address *
+                        </label>
+
+
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="Enter your email"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- SUBJECT -->
+
+                <div class="form-group">
+
+                    <label for="subject">
+                        Subject *
+                    </label>
+
+
+                    <input
+                        type="text"
+                        id="subject"
+                        name="message_subject"
+                        placeholder="What would you like to discuss?"
+                        required
+                    >
+
+                </div>
+
+
+
+                <!-- MESSAGE -->
+
+                <div class="form-group">
+
+                    <label for="message">
+                        Message *
+                    </label>
+
+
+                    <textarea
+                        id="message"
+                        name="message"
+                        placeholder="Write your message here..."
+                        required
+                    ></textarea>
+
+                </div>
+
+
+
+                <button
+                    type="submit"
+                    class="btn btn-primary submit-button"
+                >
+
+                    Send Message
+
+                    <i class="fas fa-paper-plane"></i>
+
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     FOOTER
+========================================== -->
+
+<footer>
+
+    <div class="container">
+
+        <p>
+
+            © 2026 Salma Mulla.
+
+            Built with focus on
+
+            <span>Cloud Engineering</span>.
+
+        </p>
+
+    </div>
+
+</footer>
+
+
+
+<!-- =========================================
+     JAVASCRIPT
+========================================== -->
+
+<script>
+
+
+    /* MOBILE MENU */
+
+    const menuToggle =
+        document.getElementById("menuToggle");
+
+
+    const navLinks =
+        document.getElementById("navLinks");
+
+
+    menuToggle.addEventListener("click", function () {
+
+        navLinks.classList.toggle("active");
+
+    });
+
+
+    document
+        .querySelectorAll(".nav-links a")
+        .forEach(function(link) {
+
+            link.addEventListener("click", function() {
+
+                navLinks.classList.remove("active");
+
+            });
+
+        });
+
+
+
+    /* SCROLL ANIMATION */
+
+    const observer =
+        new IntersectionObserver(
+            function(entries) {
+
+                entries.forEach(function(entry) {
+
+                    if(entry.isIntersecting) {
+
+                        entry.target.classList.add("active");
+
+                    }
+
+                });
+
+            },
+            {
+                threshold: 0.12
+            }
+        );
+
+
+    document
+        .querySelectorAll(".reveal")
+        .forEach(function(element) {
+
+            observer.observe(element);
+
+        });
+
+</script>
+
+
+</body>
+
+</html>
